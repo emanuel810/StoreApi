@@ -15,7 +15,6 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long client_id;
 	
-	
 	@NotBlank(message = "fill in this field")
 	private String name;
 	
@@ -28,6 +27,7 @@ public class Client {
 	@NotBlank(message = "fill in this field")
 	private String password;
 
+	
 	public String getName() {
 		return name;
 	}
@@ -64,4 +64,8 @@ public class Client {
 		return client_id;
 	}
 	
+	public void setClient_id(Long client_id) {
+		this.client_id = client_id;
+	}
+
 }
