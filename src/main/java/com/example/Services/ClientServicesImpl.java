@@ -2,55 +2,56 @@ package com.example.Services;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 import com.example.Dao.CartDao;
+import com.example.Dao.ClientDao;
 import com.example.Entities.Cart;
+import com.example.Entities.Client;
+
+public class ClientServicesImpl implements ClientServices {
 
 
-@Service
-public class CartServicesImpl implements CartServices {
-
-	
 	@Autowired
-	CartDao dao;
+	ClientDao dao;
 	
 	@Override
-	public List<Cart> list() {
+	public List<Client> list() {
 		// TODO Auto-generated method stub
-			return  (List<Cart>) dao.findAll();
+		return  (List<Client>) dao.findAll();
 	}
 
 	@Override
-	public Cart search(Long id) {
+	public Client search(Long id) {
 		// TODO Auto-generated method stub
 		if(dao.existsById(id)) {
-			Optional<Cart> ob = dao.findById(id);
+			Optional<Client> ob = dao.findById(id);
 			return ob.get();
 		}
 		return null;
 	}
 
 	@Override
-	public Cart add(Cart cart) {
+	public Client add(Client client) {
 		// TODO Auto-generated method stub
-		dao.save(cart);
-		return cart;
+		dao.save(client);
+		return client;
 	}
 
 	@Override
-	public Cart update(Long id, Cart cart) {
+	public Client update(Long id, Client client) {
 		if(dao.existsById(id)) {
-			cart.setCart_id(id);
-			dao.save(cart);
+			client.setClient_id(id);
+			dao.save(client);
 		}
-		return cart;
+		return client;
 	}
 
 	@Override
 	public void delete(Long id) {
+		// TODO Auto-generated method stub
 		if(dao.existsById(id)) dao.deleteById(id);
-		
 	}
 
 }
