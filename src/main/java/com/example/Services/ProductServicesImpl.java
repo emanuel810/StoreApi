@@ -2,49 +2,49 @@ package com.example.Services;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.Dao.ClientDao;
-import com.example.Entities.Client;
+import com.example.Dao.ProductDao;
+import com.example.Entities.Product;
 
 @Service
-public class ClientServicesImpl implements ClientServices {
+public class ProductServicesImpl implements ProductServices{
 
 
 	@Autowired
-	ClientDao dao;
+	ProductDao dao;
 	
 	@Override
-	public List<Client> list() {
+	public List<Product> list() {
 		// TODO Auto-generated method stub
-		return  (List<Client>) dao.findAll();
+		return  (List<Product>) dao.findAll();
 	}
 
 	@Override
-	public Client search(Long id) {
+	public Product search(Long id) {
 		// TODO Auto-generated method stub
 		if(dao.existsById(id)) {
-			Optional<Client> ob = dao.findById(id);
+			Optional<Product> ob = dao.findById(id);
 			return ob.get();
 		}
 		return null;
 	}
 
 	@Override
-	public Client add(Client client) {
+	public Product add(Product product) {
 		// TODO Auto-generated method stub
-		dao.save(client);
-		return client;
+		dao.save(product);
+		return product;
 	}
 
 	@Override
-	public Client update(Long id, Client client) {
+	public Product update(Long id, Product product) {
+		// TODO Auto-generated method stub
 		if(dao.existsById(id)) {
-			client.setClient_id(id);
-			dao.save(client);
+			product.setProduct_id(id);
+			dao.save(product);
 		}
-		return client;
+		return product;
 	}
 
 	@Override
