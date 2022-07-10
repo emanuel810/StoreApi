@@ -32,4 +32,18 @@ public class Cart {
 	public Long getProduct_id() {
 		return product_id;
 	}
+
+	public void setCart_id(Long cart_id) {
+		this.cart_id = cart_id;
+	}
+
+	public void setClient_id(Long client_id) {
+		this.client_id = client_id;
+	}
+
+	public void setProduct_id(Long product_id) {
+		this.product_id = product_id;
+	}
+	
+	
 }
