@@ -37,8 +37,8 @@ public class Configuraciones extends OncePerRequestFilter{
 	private ApiInfo apiDetails() {
 		// TODO Auto-generated method stub
 		return new ApiInfoBuilder()
-				.title("Polar City")
-				.description("Api para agregar producto y usuarios con carrito incluido")
+				.title("Store Api")
+				.description("Api realizada para gestion de tiendas")
 				.build() ;
 	}
 	
