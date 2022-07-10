@@ -5,7 +5,6 @@ import java.util.List;
 import com.example.Entities.Cart;
 
 
-
 public interface CartServices {
 	List<Cart> list();
 	Cart search(Long id);
