@@ -12,7 +12,7 @@ public class ProductServicesImpl implements ProductServices{
 
 
 	@Autowired
-	ProductDao dao;
+	private ProductDao dao;
 	
 	@Override
 	public List<Product> list() {

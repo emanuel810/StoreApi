@@ -13,7 +13,7 @@ public class ClientServicesImpl implements ClientServices {
 
 
 	@Autowired
-	ClientDao dao;
+	private ClientDao dao;
 	
 	@Override
 	public List<Client> list() {

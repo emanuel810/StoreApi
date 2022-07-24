@@ -13,7 +13,7 @@ public class CartServicesImpl implements CartServices {
 
 	
 	@Autowired
-	CartDao dao;
+	private CartDao dao;
 	
 	@Override
 	public List<Cart> list() {
